@@ -161,7 +161,16 @@
 |updated_at|datetime|NO||CURRENT_TIMESTAMP|on update CURRENT_TIMESTAMP||
 |deleted_at|datetime|YES||NULL|||
 ### Association
-- has_many: memories, places
+- has_many: memories, auto_login_tokens, places
+
+### auto_login_tokens
+|Field|Type|Null|KEY|Default|Extra|Comment|
+|-----|----|----|---|-------|-----|-------|
+|auto_login_token|varchar(32)|NO|PRI|NULL|||
+|account_id|int(11)|NO|FOR|NULL|||
+|created_at|datetime|NO||CURRENT_TIMESTAMP|||
+### Association
+- belongs_to: users
 
 
 ### temp_users table（一時ユーザテーブル）
